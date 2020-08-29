@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bob Running AI (watch it train)</title>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="matter.js"></script>
+<style type="text/css">
+canvas{
+	border: 0.5px solid grey;
+}
+body, button{
+	font-family: 'PT Sans', sans-serif;
+}
+h1{
+	font-family: 'Russo One', sans-serif;
+}
+</style>
+</head>
+<body>
+	<h1>Bob the Running AI</h1>
+	Bob was created using <a href="https://brm.io/matter-js/">matter.js</a> for the physics and a very simple neural network, with no hidden layers or biases. I did not use any Machine Learning libraries for this; I did it from scratch in JavaScript (see <a href="ml.js">ml.js</a>). This uses very simple evolution: Bobs die if their head goes below the red line, and the ones that move furthest may reproduce and evolve. Also, the activation function is a sine wave because it works best that way. Surprisingly, after hours of intense coding and tweaking, Bob actually learned how to run and skip (I call it running and skipping, it's not exact)! This project is of the most complex ones I have ever done, and I am honestly shocked that I got it working. This is from a competition between me and <a href="https://n8python.github.io/">n8programs</a>, where we both tried to make walking bots. Stay tuned for a video about this project, and enjoy!<br><br>
+
+	Watch it train and improve from scratch! <a href="run.html">Or, run the trained version.</a><br>
+	Watch: <input type="checkbox" id="watch"> (note: when this is not selected, the video will be very choppy as to save computer processing power)<br>
+	<button onclick="exportWeights()">Export Weights</button>
+	<button onclick="start()">Start</button> <span id="generation"></span><br>
+
+	Creativity: <input type="range" min="0.001" max="1" value="0.5" step="0.01" id="creativity"> 
+	<br>
+	<canvas width="800" height="600" id="canvas"></canvas>
+	<canvas width="800" height="100" id="showSpeed"></canvas>
+
+	<script type="text/javascript">var trainedWeights;</script>
+	<script type="text/javascript" src="graphics.js"></script>
+	<script type="text/javascript" src="ml.js"></script>
+</body>
+</html>

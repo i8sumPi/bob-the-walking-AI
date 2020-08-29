@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bob Running AI</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="matter.js"></script>
+<style type="text/css">
+canvas{
+	border: 0.5px solid grey;
+}
+body, button{
+	font-family: 'PT Sans', sans-serif;
+}
+h1{
+	font-family: 'Russo One', sans-serif;
+}
+</style>
+</head>
+<body>
+	<h1 id="header">Bob the Running AI (skipping)</h1>
+	Watch the trained version run and (maybe) improve further! <a href="index.html">Or, train it from scratch.</a><br>
+
+	<button onclick="start()" id="start">Start Skipping</button> 
+	<button onclick="switchRunType()" id="switch">Switch to Running</button> <br>
+	Watch: <input type="checkbox" id="watch"> (note: when this is not selected, the video will be very choppy as to save computer processing power)<br>
+	<button onclick="exportWeights()">Export Weights</button>
+	<button onclick="start()">Start</button> <span id="generation"></span><br>
+
+	Creativity: <input type="range" min="0.001" max="1" value="0.5" step="0.01" id="creativity">
+	<span id="generation"></span>
+	<br>
+
+	<canvas width="800" height="600" id="canvas"></canvas>
+	<canvas width="800" height="100" id="showSpeed"></canvas>
+
+	<script type="text/javascript" src="run.js"></script>
+	<script type="text/javascript" src="graphics.js"></script>
+	<script type="text/javascript" src="ml.js"></script>
+</body>
+</html>
